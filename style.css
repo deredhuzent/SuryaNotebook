@@ -1,0 +1,40 @@
+body{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+    background-image: url("./ART/Background/mosaico.jpg");
+  }
+  
+  h1{
+    font-size: 40px;
+    color: white;
+    background: black;
+  }
+  #title{
+    display: flex;
+    justify-content: center;
+    padding-top: 1%;
+  }
+  
+  #canvasSection{
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    padding-top: 0.5%;
+  }
+  
+  canvas {  
+    border: purple 9px solid;
+    }
+  
+   #copy{
+     background-color: black;
+     text-align: center;
+   }
+  
+   .box{
+     padding-right: 4%
+   }
+  
+  
