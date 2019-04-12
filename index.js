@@ -6,6 +6,7 @@ let obstacles = [];
 
 const images = {
     paper: src='./Art/Background/Background Notebook.jpg',
+    title: src='./Art/Background/Title.png',
     sun: src='./Art/Characters/Surya/suryaSprite.png',
     meteor: src='./Art/Characters/Asteroid/asteroidSprite.png'
 }
@@ -24,6 +25,23 @@ class Board {
       this.height = canvas.height
       this.img = new Image()
       this.img.src = notebook
+      this.img.onload = () => {
+       this.draw()
+      }
+    }
+    draw() {
+      ctx.drawImage(this.img, this.x, this.y, this.width, this.height)
+    }
+  }
+
+  class Title {
+    constructor(title) {
+      this.x = 0
+      this.y = 0
+      this.width = canvas.width
+      this.height = canvas.height
+      this.img = new Image()
+      this.img.src = title
       this.img.onload = () => {
        this.draw()
       }
@@ -174,6 +192,7 @@ class GenericMeteorite {
 
 
 const board = new Board(images.paper)
+const title = new Title(images.title)
 const surya = new Surya(50, 0, 210, 190, images.sun)
 const tRex = new TRex(450, 370, 100, 145, dinoRex)
 
@@ -182,6 +201,7 @@ let frames = 0
 let interval
 
 function update() {
+
     ctx.clearRect(0,0,canvas.width, canvas.height)
     board.draw()
     surya.draw()
@@ -202,10 +222,10 @@ function gameOver(){
     // tRex.dinoDie()
     // generateMeteorites = false;
     ctx.font = "40px Courier New";
-    ctx.fillText("Felicidades!!!", 380,240);
-    ctx.fillText("Haz extinto los dinosaurios!!!", 190, 300)
+    ctx.fillText("Felicidades!!! ('¬.¬)", 300,240);
+    ctx.fillText("Haz extinto los dinosaurios!!!", 190,280)
     
-    // alert ('Se han extinto los dinosaurios!!!')
+    // alert ('Se han extinto los dinsaurios!!!')
 }
 
 
@@ -245,21 +265,22 @@ function generateMeteorites(){
 
 addEventListener('keydown', e => {
     e.preventDefault()
+    if (tRex.dead) return
   switch (e.keyCode) {
       case 32: 
         startGame() 
         break; 
-      case 68: //d tRex
+      case 39: //d tRex
         return tRex.moveRight()
-      case 65: //a tRex
+      case 37: //a tRex
         return tRex.moveLeft()
-      case 38: // flecha arriba
+      case 87: // flecha arriba
         return surya.moveUp()
-      case 40: // flecha abajo
+      case 83: // flecha abajo
         return surya.moveDown()
-      case 37:
+      case 65:
         return surya.moveLeft()
-      case 39:
+      case 68:
         return surya.moveRight()
     }
   })
