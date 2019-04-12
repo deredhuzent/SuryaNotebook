@@ -41,7 +41,7 @@ class Surya{
         this.sy = 0
         this.height = height
         this.width = width
-        this.radius = 15
+        this.radius = 50
         this.img = new Image()
         this.img.src = img
         this.img.onload = () => {
@@ -84,7 +84,7 @@ class Surya{
             (Math.sqrt((this.x-obstacle.x) * 
             (this.x-obstacle.x) + 
             (this.y-obstacle.y) *
-            (this.y-obstacle.y)) < 15 + 35)
+            (this.y-obstacle.y)) < 50 + 40)
     )} 
   }
 
@@ -99,6 +99,7 @@ class TRex{
         this.imgArr = img
         this.img = new Image()
         this.img.src = img.dinoRight
+        this.dead = false;
         this.img.onload = () => {
           this.draw(this.height, this.width)
         }
@@ -109,16 +110,17 @@ class TRex{
       moveRight(){
         this.img = new Image()
         this.img.src = this.imgArr.dinoRight
-        this.x+=10
+        this.x+=20
         if(tRex.x >= 900) tRex.x=900;
       }
       moveLeft = () => {
         this.img = new Image() 
         this.img.src = this.imgArr.dinoLeft
-        this.x-=10
+        this.x-=20
         if(tRex.x <=40) tRex.x=40;
       }
       dinoDie(){
+        this.dead = true;
         this.img.src = ''
         this.img.src = this.imgArr.dinoCorpse
         this.height = 145
@@ -132,7 +134,6 @@ class TRex{
             (this.y-obstacle.y) *
             (this.y-obstacle.y)) < 10 + 35)
         )}    
-        //if touching obstacle true, print dinoDie
 }
     
 class GenericMeteorite {
@@ -141,7 +142,7 @@ class GenericMeteorite {
         this.y = Math.random() * 13
         this.sx = 0
         this.sy = 0
-        this.height = (Math.random() * 100)  + 90 //SIZE
+        this.height = (Math.random() * 100)  + 90
         this.width = this.height
         this.gravity = 4
         this.img = new Image()
@@ -185,7 +186,9 @@ function update() {
     board.draw()
     surya.draw()
     tRex.draw()
-    generateMeteorites()
+    obstacles = obstacles.filter(el=>!surya.isTouching(el))
+    if(!tRex.dead) generateMeteorites()
+    if (tRex.dead)gameOver()
     drawMeteorites(true)
     frames++
 }
@@ -196,62 +199,48 @@ interval = setInterval(update, 1000/16)
 }
 
 function gameOver(){
-    tRex.dinoDie()
-    alert ('Se han extinto los dinosaurios!!!')
+    // tRex.dinoDie()
+    // generateMeteorites = false;
+    ctx.font = "40px Courier New";
+    ctx.fillText("Felicidades!!!", 380,240);
+    ctx.fillText("Haz extinto los dinosaurios!!!", 190, 300)
+    
+    // alert ('Se han extinto los dinosaurios!!!')
 }
 
 
 function generateMeteorites(){
-    if (!(frames % 12 === 0)) return
+    if (!(frames % 10 === 0)) return
       let obs = new GenericMeteorite()
       obstacles.push(obs)
   }
   
   function drawMeteorites(isdrawing){ 
       if (isdrawing) {
-          obstacles.forEach(x => {
+          obstacles.forEach((x, i) => {
            x.draw()
-           checkColission(x)
+           checkColission(x, i) 
       })
     }
   }    
 
-function delMetorite(){
-    checkColission(x => {
-    obstacles.splice(x,1) // debe desapaecer el meteorito
-})
-  }
+  function checkColission(obstacle, i){
 
-  function checkColission(obstacles){
-      //foreach de los meteoritos
-      //para cada obstACULO, HACER CHECKCOLLITION CON surya y TREX
-      //o al reves vas a checar si surya o trex tienen un istouching en true contra cada oobstaculo
-      if(tRex.isTouching(obstacles)){
+      if(tRex.isTouching(obstacle)){
           life--
           if(life <= 0) {
-              gameOver()
-             
-              drawMeteorites(false);
+            tRex.dinoDie()
           }
-        }}
-        // obstacles.forEach((e, indice)=>{
-        //     e.isTouching(item)
-        //     drawMeteorites = false;
+        }
+    if(surya.isTouching(obstacle)){
+        obstacles.splice(1,1)
+        console.log('obstacles', obstacles)
+    }
+    }
 
-    //     }
-        
-    //   }
-    // //   if(surya.isTouching(item)){
-    //     life--
-    //     console.log(life)
                             
-    //                         // el toque de surya elimina a los meteoritos
-    //     if(life == 0) {
-    //       setTimeout(() => {
-    //           surya.draw()
-    //       }, 10000)
-    //     }
-    // }
+   // el toque de surya elimina a los meteoritos
+
   
 
 addEventListener('keydown', e => {

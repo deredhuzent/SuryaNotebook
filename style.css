@@ -6,22 +6,12 @@ body{
     background-image: url("./ART/Background/mosaico.jpg");
   }
   
-  h1{
-    font-size: 40px;
-    color: white;
-    background: black;
-  }
-  #title{
-    display: flex;
-    justify-content: center;
-    padding-top: 1%;
-  }
   
   #canvasSection{
     display: flex;
     justify-content: center;
     align-content: center;
-    padding-top: 0.5%;
+    padding-top: 1.5%;
   }
   
   canvas {  
