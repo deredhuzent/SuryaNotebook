@@ -12,8 +12,8 @@ const images = {
 }
 
 const dinoRex = {
-dinoRight: src='./Art/Characters/t-Rex/tRexRight.png',
-dinoLeft: src='./Art/Characters/t-Rex/tRexLeft.png',
+dinoRight: src='./Art/Characters/t-Rex/tRexRightSprite.png',
+dinoLeft: src='./Art/Characters/t-Rex/tRexLeftSprite.png',
 dinoCorpse: src ='./Art/Characters/t-Rex/tRexDeath.png'
 }
 
@@ -59,7 +59,7 @@ class Surya{
         this.sy = 0
         this.height = height
         this.width = width
-        this.radius = 50
+        this.radius = 40
         this.img = new Image()
         this.img.src = img
         this.img.onload = () => {
@@ -110,6 +110,8 @@ class TRex{
     constructor(x, y, height, width, img) {
         this.x = x
         this.y = y
+        this.sx = 0
+        this.sy = 0
         this.height = height
         this.width = width
         this.life = life
@@ -123,7 +125,19 @@ class TRex{
         }
       }
       draw(){
-        ctx.drawImage(this.img, this.x, this.y, this.height, this.width)
+       if(this.sx > 409) this.sx = 0
+       ctx.drawImage(
+        this.img,
+        this.sx,
+        this.sy,
+        409,
+        567,
+        this.x,
+        this.y,
+        100,
+        145
+       )
+       this.sx += 409
       }
       moveRight(){
         this.img = new Image()
