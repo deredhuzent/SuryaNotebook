@@ -1,7 +1,7 @@
 const canvas = document.querySelector('canvas')
 const ctx   = canvas.getContext('2d')
 
-let life = 3;
+let life = 1;
 let obstacles = [];
 
 const images = {
@@ -41,6 +41,7 @@ class Surya{
         this.sy = 0
         this.height = height
         this.width = width
+        this.radius = 15
         this.img = new Image()
         this.img.src = img
         this.img.onload = () => {
@@ -63,21 +64,28 @@ class Surya{
         this.sx+=232
       }
       moveUp(){
-        this.y-=20
+        this.y-=30
         if(surya.y <= 0) surya.y=0;
       }
       moveDown(){
-        this.y+=20
+        this.y+=30
         if(surya.y >= 320) surya.y=320;
       }
       moveRight(){
-        this.x+=10
+        this.x+=30
         if(surya.x >= 800) surya.x=800;
       }
       moveLeft(){
-        this.x-=10
+        this.x-=30
         if(surya.x <=40) surya.x=40;
       }
+      isTouching(obstacle){
+        return (
+            (Math.sqrt((this.x-obstacle.x) * 
+            (this.x-obstacle.x) + 
+            (this.y-obstacle.y) *
+            (this.y-obstacle.y)) < 15 + 35)
+    )} 
   }
 
 class TRex{
@@ -86,7 +94,8 @@ class TRex{
         this.y = y
         this.height = height
         this.width = width
-        this.life = 3
+        this.life = life
+        this.radius = 15
         this.imgArr = img
         this.img = new Image()
         this.img.src = img.dinoRight
@@ -117,22 +126,24 @@ class TRex{
         this.y =+410
       }
       isTouching(obstacle){
-        return  (this.x < obstacle.x + obstacle.width) &&
-        (this.x + 15  > obstacle.x) &&
-        (this.y < obstacle.y + obstacle.height) &&
-        (this.y + 15 > obstacle.y)
-      }
-    }
+        return (
+            (Math.sqrt((this.x-obstacle.x) * 
+            (this.x-obstacle.x) + 
+            (this.y-obstacle.y) *
+            (this.y-obstacle.y)) < 10 + 35)
+        )}    
+        //if touching obstacle true, print dinoDie
+}
     
 class GenericMeteorite {
     constructor(){
         this.x =  Math.random() * board.width
-        this.y = Math.random() * 10
+        this.y = Math.random() * 13
         this.sx = 0
         this.sy = 0
-        this.height = (Math.random() * 100)  + 90
+        this.height = (Math.random() * 100)  + 90 //SIZE
         this.width = this.height
-        this.gravity = 1.7
+        this.gravity = 4
         this.img = new Image()
         this.img.src = images.meteor
         this.img.onload = () => {
@@ -158,140 +169,12 @@ class GenericMeteorite {
 
             if(this.y === board.height - this.height) this.width = 0
           }
-
-    isTouching
 }
 
-class AsteroidBig {
-  constructor(x, y, height, width, img) {
-    this.x = x
-    this.y = y
-    this.sx = 0
-    this.sy = 0
-    this.height = height
-    this.width = width
-    this.img = new Image()
-    this.img.src = img
-    this.img.onload = () => {
-      this.draw(this.height, this.width)
-    }
-  }
-  draw(){
-    //checar animación
-        if (this.sx > 438) this.sx = 0
-        ctx.drawImage(
-          this.img, 
-          this.sx,
-          this.sy,
-          225, 
-          230,
-          this.x,
-          this.y, 
-          220,
-          220
-          )
-        this.sx+=234
-      }
-    gravityBig(gravity){
-      this.gravity = gravity
-      this.y += gravity / 10
-      this.x -= gravity / 10
-      if (this.y === 300) this.width = 0 
-      /*if(asteroidBig.y++ < 300 + asteroidBig.x--){
-        if (asteroidBig.y >= 300) asteroidBig.y=300;*/
-      
-    }
-}
 
-class AsteroidSmall {
-    constructor(x, y, height, width, img) {
-      this.x = x
-      this.y = y
-      this.sx = 0
-      this.sy = 0
-      this.height = height
-      this.width = width
-      this.img = new Image()
-      this.img.src = img
-      this.img.onload = () => {
-        this.draw(this.height, this.width)
-      }
-    }
-    draw(){
-          if (this.sx > 438) this.sx = 0
-          ctx.drawImage(
-            this.img, 
-            this.sx,
-            this.sy,
-            225, 
-            230,
-            this.x,
-            this.y, 
-            150,
-            150
-            )
-          this.sx+=234
-          console.log(this.y, this.gravity)
-        }
-      gravitySmall(gravity){
-        this.gravity = gravity
-        this.y += gravity / 10
-        this.x -= gravity / 10
-        if (this.y === 300) return 
-        /*if(asteroidBig.y++ < 300 + asteroidBig.x--){
-          if (asteroidBig.y >= 300) asteroidBig.y=300;*/
-        
-      }
-  }
-
-class AsteroidXS {
-   constructor(x, y, height, width, img) {
-    this.x = x
-    this.y = y
-    this.sx = 0
-    this.sy = 0
-    this.height = height
-    this.width = width
-    this.img = new Image()
-    this.img.src = img
-    this.img.onload = () => {
-    this.draw(this.height, this.width)
-      }
-    }
-    draw(){
-    if (this.sx > 438) this.sx = 0
-       ctx.drawImage(
-        this.img, 
-        this.sx,
-        this.sy,
-        225, 
-        230,
-        this.x,
-        this.y, 
-        90,
-        90
-        )
-        this.sx+=234
-        }
-      gravityXS(gravity){
-        this.gravity = gravity
-        this.y += gravity / 10
-        this.x -= gravity / 10
-        if (this.y === 450) return 
-        if(asteroidXS.y++ < 450 + asteroidXS.x--){
-          if (asteroidXS.y >= 450) asteroidXS.y=450;
-        }
-      }
-  }
-
-//creating new instances
-// (x,y,h,w,image)
 const board = new Board(images.paper)
 const surya = new Surya(50, 0, 210, 190, images.sun)
 const tRex = new TRex(450, 370, 100, 145, dinoRex)
-// const asteroidLg = new AsteroidBig(1000, -100, 280, 260, images.meteor)
-// const asteroidSm = new AsteroidSmall(900, -150, 180, 160, images.meteor)
-// const asteroidXS = new AsteroidXS (700, -180, 110, 110, images.meteor)
 
 
 let frames = 0
@@ -303,7 +186,7 @@ function update() {
     surya.draw()
     tRex.draw()
     generateMeteorites()
-    drawMeteorites()
+    drawMeteorites(true)
     frames++
 }
 
@@ -313,32 +196,63 @@ interval = setInterval(update, 1000/16)
 }
 
 function gameOver(){
-    alert("perdiste")
+    tRex.dinoDie()
+    alert ('Se han extinto los dinosaurios!!!')
 }
 
 
 function generateMeteorites(){
-    if (!(frames % 32 === 0)) return
+    if (!(frames % 12 === 0)) return
       let obs = new GenericMeteorite()
       obstacles.push(obs)
   }
   
-  function drawMeteorites(){ 
-   obstacles.forEach(x => {
-    x.draw()
-    checkColission(x)
-   })
-  } 
+  function drawMeteorites(isdrawing){ 
+      if (isdrawing) {
+          obstacles.forEach(x => {
+           x.draw()
+           checkColission(x)
+      })
+    }
+  }    
 
-  function checkColission(item){
-      if(tRex.isTouching(item)){
-          life--
-          console.log(life)
-          item.width = 0
-          item.height = 0
-          if(life == 0) gameOver()
-      }
+function delMetorite(){
+    checkColission(x => {
+    obstacles.splice(x,1) // debe desapaecer el meteorito
+})
   }
+
+  function checkColission(obstacles){
+      //foreach de los meteoritos
+      //para cada obstACULO, HACER CHECKCOLLITION CON surya y TREX
+      //o al reves vas a checar si surya o trex tienen un istouching en true contra cada oobstaculo
+      if(tRex.isTouching(obstacles)){
+          life--
+          if(life <= 0) {
+              gameOver()
+             
+              drawMeteorites(false);
+          }
+        }}
+        // obstacles.forEach((e, indice)=>{
+        //     e.isTouching(item)
+        //     drawMeteorites = false;
+
+    //     }
+        
+    //   }
+    // //   if(surya.isTouching(item)){
+    //     life--
+    //     console.log(life)
+                            
+    //                         // el toque de surya elimina a los meteoritos
+    //     if(life == 0) {
+    //       setTimeout(() => {
+    //           surya.draw()
+    //       }, 10000)
+    //     }
+    // }
+  
 
 addEventListener('keydown', e => {
     e.preventDefault()
@@ -350,8 +264,6 @@ addEventListener('keydown', e => {
         return tRex.moveRight()
       case 65: //a tRex
         return tRex.moveLeft()
-      case 83: // s death
-        return tRex.dinoDie()
       case 38: // flecha arriba
         return surya.moveUp()
       case 40: // flecha abajo
