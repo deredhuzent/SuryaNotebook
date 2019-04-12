@@ -39,7 +39,7 @@ class Board {
       this.x = 0
       this.y = 0
       this.width = canvas.width
-      this.height = canvas.height 
+      this.height = canvas.height
       this.img = new Image()
       this.img.src = title
       this.img.onload = () => {
@@ -222,7 +222,7 @@ function gameOver(){
     // tRex.dinoDie()
     // generateMeteorites = false;
     ctx.font = "40px Courier New";
-    ctx.fillText("Felicidades!!! ('¬.¬)", 300,240);
+    ctx.fillText("('¬.¬)", 450,240);
     ctx.fillText("Haz extinto los dinosaurios!!!", 190,280)
     
     // alert ('Se han extinto los dinsaurios!!!')
