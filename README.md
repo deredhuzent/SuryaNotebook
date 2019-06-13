@@ -1,4 +1,4 @@
-# suryaFinal
+# Surya NoteBook
 
 Sūrya is the goddess sun who will try to protect the T-Rex from the meteorites to avoid extinction.
 
