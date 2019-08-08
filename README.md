@@ -14,11 +14,8 @@ This 2 player game is pretty simple:
 
 1. If one of this ![](https://i.imgur.com/0aEGWpd.png) hits t-rex, this happens ![](https://i.imgur.com/vgDq6KO.png)... And it's ![](https://i.imgur.com/LmeM3sU.png)**!!!**
 
-
-You can try it out using this link: [Sūrya's Notebook](https://)
-
-
-
+---
+**You can try it out using this link: [Sūrya's Notebook](https://deredhuzent.github.io/SuryaNotebook/)**
 
 ---
 
