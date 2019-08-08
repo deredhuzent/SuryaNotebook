@@ -221,7 +221,7 @@ interval = setInterval(update, 1000/16)
 function gameOver(){
     ctx.font = "40px Courier New";
     ctx.fillText("¡ ('¬.¬) !", 415,240);
-    ctx.fillText("You have extinguished the dinosaurs!!", 190,280)
+    ctx.fillText("The dinos are now extinct!", 225,290)
 }
 
 
