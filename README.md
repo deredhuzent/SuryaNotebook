@@ -8,7 +8,7 @@ This 2 player game is pretty simple:
 > This is a kinda "story" from Sūrya's drawings about the last dinosaur on earth confronting the "*~~dino-apocalypse~~*" thanks to the **meteorites**.
 > 
 ---
-1. ![](https://i.imgur.com/5QqM4Yb.png)<~ Meet this little cute guy is **T-rex**. He can only run from danger, trembling with fear.
+1. ![](https://i.imgur.com/5QqM4Yb.png)<~ Meet this little cute guy he is **T-rex**. He can only run from danger, trembling with fear.
 
 1. ![](https://i.imgur.com/oUIj0vq.png) <~ And this is **Sūrya**, the goddess sun who needs to *avoid the dinosaurs* extinction by protecting t-rex. She can move around the map protecting the dino... meteorites doesn't hurt her.
 
