@@ -219,13 +219,9 @@ interval = setInterval(update, 1000/16)
 }
 
 function gameOver(){
-    // tRex.dinoDie()
-    // generateMeteorites = false;
     ctx.font = "40px Courier New";
     ctx.fillText("¡ ('¬.¬) !", 415,240);
-    ctx.fillText("Haz extinto los dinosaurios!!!", 190,280)
-    
-    // alert ('Se han extinto los dinsaurios!!!')
+    ctx.fillText("You have extinguished the dinosaurs!!", 190,280)
 }
 
 
