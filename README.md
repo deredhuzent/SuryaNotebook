@@ -10,7 +10,7 @@ This 2 player game is pretty simple:
 ---
 1. ![](https://i.imgur.com/5QqM4Yb.png)<~ Meet little cute guy is **T-rex**. He can only run from danger, trembling with fear.
 
-1. ![](https://i.imgur.com/oUIj0vq.png) <~ And this is **Sūrya**, the goddess sun who needs to *avoid the dinosaurs* extinction by protecting t-rex.She can move around the map protecting the dino... meteorites doesn't hurt her.
+1. ![](https://i.imgur.com/oUIj0vq.png) <~ And this is **Sūrya**, the goddess sun who needs to *avoid the dinosaurs* extinction by protecting t-rex. She can move around the map protecting the dino... meteorites doesn't hurt her.
 
 1. If one of this ![](https://i.imgur.com/0aEGWpd.png) hits t-rex, this happens ![](https://i.imgur.com/vgDq6KO.png)... And it's ![](https://i.imgur.com/LmeM3sU.png)**!!!**
 
@@ -42,4 +42,4 @@ All this are original characters and drawings.
 Here is a view of when I was animating the meteorite: [instagram post](https://www.instagram.com/p/BwGVp94Dvi5/)
 
 ---
-This is my first videogame ever. <3
+This is my first videogame ever <3 !!!
