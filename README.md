@@ -17,12 +17,9 @@ This 2 player game is pretty simple:
 ---
 **You can try it out using this link: [Sūrya's Notebook](https://deredhuzent.github.io/SuryaNotebook/)**
 
----
 
 > 1 week challenge project where I had to develop from scratch a video game using Javascript.
 > 
-
----
 
 All this are original characters and drawings.
 
