@@ -35,8 +35,10 @@ All this are original characters and drawings.
 ![](https://i.imgur.com/wGOLy4E.png)
 
 ---
-Here is a view of when I was animating the meteorite: [instagram post](https://www.instagram.com/p/BwGVp94Dvi5/)
-
+Here are some posts from when I was developing the game
+* [Animating the meteorite.](https://www.instagram.com/p/BwGVp94Dvi5/)
+* [Drawing Sūrya.](https://www.instagram.com/p/Bv-FtT1jvXp/)
+* [Coding the game.](https://www.instagram.com/p/BwFlQcqDXCz/)
 ---
 This is my first videogame ever <3 !!!
 
