@@ -29,6 +29,8 @@ You can try it out using this link: [Sūrya's Notebook](https://)
 
 All this are original characters and drawings.
 
+---
+**SPRITES:**
 * Sūrya:
 ![](https://i.imgur.com/B0EDtqu.png)
 * Metorites:
@@ -43,3 +45,4 @@ Here is a view of when I was animating the meteorite: [instagram post](https://w
 
 ---
 This is my first videogame ever <3 !!!
+
