@@ -1,11 +1,45 @@
-# Sūrya NoteBook
+# Sūrya's Notebook
 
-Sūrya is the goddess sun who will try to protect the T-Rex from the meteorites to avoid extinction.
+This 2 player game is pretty simple:
 
-1 week challenge project where I had to develop from scratch a video game using Javascript.
+![](https://i.imgur.com/vVTsaiW.jpg)
 
-The characters drawing, sprites, design and coding are completely made by me.
 
-![](https://github.com/deredhuzent/SuryaNotebook/blob/master/Art/SuryaNotebook.png?raw=true)
+> This is a kinda "story" from Sūrya's drawings about the last dinosaur on earth confronting the "*~~dino-apocalypse~~*" thanks to the **meteorites**.
+> 
+---
+1. ![](https://i.imgur.com/5QqM4Yb.png)<~ Meet little cute guy is **T-rex**. He can only run from danger, trembling with fear.
 
-This is my first videogame ever.
+1. ![](https://i.imgur.com/oUIj0vq.png) <~ And this is **Sūrya**, the goddess sun who needs to *avoid the dinosaurs* extinction by protecting t-rex.She can move around the map protecting the dino... meteorites doesn't hurt her.
+
+1. If one of this ![](https://i.imgur.com/0aEGWpd.png) hits t-rex, this happens ![](https://i.imgur.com/vgDq6KO.png)... And it's ![](https://i.imgur.com/LmeM3sU.png)**!!!**
+
+
+You can try it out using this link: [Sūrya's Notebook](https://)
+
+
+
+
+---
+
+> 1 week challenge project where I had to develop from scratch a video game using Javascript.
+> 
+
+---
+
+All this are original characters and drawings.
+
+* Sūrya:
+![](https://i.imgur.com/B0EDtqu.png)
+* Metorites:
+![](https://i.imgur.com/IvLA7Bz.png)
+* T-rex side to side:
+![](https://i.imgur.com/cbHq6N1.png)
+* T-rex death:
+![](https://i.imgur.com/wGOLy4E.png)
+
+---
+Here is a view of when I was animating the meteorite: [instagram post](https://www.instagram.com/p/BwGVp94Dvi5/)
+
+---
+This is my first videogame ever. <3
