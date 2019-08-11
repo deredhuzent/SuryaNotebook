@@ -1,11 +1,13 @@
 # Sūrya's Notebook
 
+> 1 week challenge project where I had to develop from scratch a video game using Javascript.
+
 This 2 player game is pretty simple:
 
 ![](https://i.imgur.com/vVTsaiW.jpg)
 
 
-> This is a kinda "story" from Sūrya's drawings about the last dinosaur on earth confronting the "*~~dino-apocalypse~~*" thanks to the **meteorites**.
+> This is a "kinda story" from Sūrya's drawings about the last dinosaur on earth confronting the "*~~dino-apocalypse~~*" thanks to the **meteorites**.
 > 
 ---
 1. ![](https://i.imgur.com/5QqM4Yb.png)<~ Meet this little cute guy: **T-rex**. He can only run from danger, trembling with fear.
@@ -18,8 +20,8 @@ This 2 player game is pretty simple:
 **You can try it out using this link: [Sūrya's Notebook](https://deredhuzent.github.io/SuryaNotebook/)**
 
 
-> 1 week challenge project where I had to develop from scratch a video game using Javascript.
-> 
+
+
 
 All this are original characters and drawings.
 
@@ -35,7 +37,7 @@ All this are original characters and drawings.
 ![](https://i.imgur.com/wGOLy4E.png)
 
 ---
-Here are some instagram posts from when I was developing the game
+Here are some instagram posts when I was developing the game:
 * [Animating the meteorite.](https://www.instagram.com/p/BwGVp94Dvi5/)
 * [Drawing Sūrya.](https://www.instagram.com/p/Bv-FtT1jvXp/)
 * [Coding the game.](https://www.instagram.com/p/BwFlQcqDXCz/)
