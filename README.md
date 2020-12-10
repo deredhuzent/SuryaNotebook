@@ -7,7 +7,7 @@ This 2 player game is pretty simple:
 ![](https://i.imgur.com/vVTsaiW.jpg)
 
 
-> This is a "kinda story" from Sūrya's drawings about the last dinosaur on earth confronting the "*~~dino-apocalypse~~*" thanks to the **meteorites**.
+> The end is neigh! The Dino-apocalypse is here! Meteorites are showering the skies and the only thing that T-rex, the last dinosaur on Earth, can do, is to try his best and avoid getting hit by them! Thankfully, Surya, the sun goddess is there to help him! With a goddess by his side, will T-rex survive this catastrophe of meteoric proportions!? You have to play to find out!
 > 
 ---
 1. ![](https://i.imgur.com/5QqM4Yb.png)<~ Meet this little cute guy: **T-rex**. He can only run from danger, trembling with fear.
